@@ -1,9 +1,10 @@
 % for pure compression in 2D
 
-%inital positoions of four points of a polygon
+%inital positoions of points of a polygon
 pos_i = [0,0; 0,1; 1,1; 1,0];
 %final positions (after deformation) of the same four points
-pos_f = [0.1,0.1; 0.1,0.9; 0.9,0.9; 0.9,0.1];
+% pos_f = [0.1,0.1; 0.1,0.9; 0.9,0.9; 0.9,0.1];
+pos_f = func_rotate(pos_i,30/180*pi);
 
 disp(pos_i)
 disp(pos_f)
@@ -23,7 +24,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
@@ -45,7 +46,7 @@ pause
 
 % now rotate globally
 theta = 30/180*pi;
-pos_f = rotate(pos_f,theta);
+pos_f = func_rotate(pos_f,theta);
 disp(pos_i);
 disp(pos_f);
 
@@ -64,7 +65,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
@@ -108,7 +109,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
@@ -129,7 +130,7 @@ pause
 
 % now rotate globally
 theta = 30/180*pi;
-pos_f = rotate(pos_f,theta);
+pos_f = func_rotate(pos_f,theta);
 disp(pos_i);
 disp(pos_f);
 
@@ -148,7 +149,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
@@ -193,7 +194,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
@@ -214,7 +215,7 @@ pause
 
 % now rotate globally
 theta = 30/180*pi;
-pos_f = rotate(pos_f,theta);
+pos_f = func_rotate(pos_f,theta);
 disp(pos_i);
 disp(pos_f);
 
@@ -233,7 +234,7 @@ plot(xi, yi,'*-k', xf, yf,'*-r')
 legend('old','new')
 
 %calculating strain
-s = calc_strain(pos_i, pos_f);
+s = func_strain_v1(pos_i, pos_f);
 
 %pure compression component of the strain tensor
 disp('hydrostatic compression')
