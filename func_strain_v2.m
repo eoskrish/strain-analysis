@@ -1,3 +1,7 @@
+%Describe what the function does
+%
+%
+
 function [epsilon] = func_strain_v2(posi, posf)
 
 n_points = size(posi,1);
