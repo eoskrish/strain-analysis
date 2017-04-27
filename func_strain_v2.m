@@ -2,11 +2,8 @@
 %
 %
 
-<<<<<<< HEAD
 function [epsilon, D_sq] = func_strain_v2(posi, posf)
-=======
 function [epsilon] = func_strain_v2(posi, posf)
->>>>>>> 8f23945a8537fe6747582c219b253c0f1cd88b90
 
 n_points = size(posi,1);
 t_points = size(posf,2);
