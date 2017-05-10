@@ -3,7 +3,7 @@
 %
 
 function [epsilon, D_sq] = func_strain_v2(posi, posf)
-function [epsilon] = func_strain_v2(posi, posf)
+% function [epsilon] = func_strain_v2(posi, posf)
 
 n_points = size(posi,1);
 t_points = size(posf,2);
@@ -36,15 +36,15 @@ epsilon = epsilon - [1,0; 0,1];
 
 I = [1,0;0,1];
 D_sq = 0;
-dummy1 = 0;
 for n = 2 : n_points
+  dummyn = 0;
   for i = 1 : 2
-    dummy1 = dummy1 + (r{2}(n,i) - r{2}(1,i));
+    % dummy1 = dummy1 + (r{2}(n,i) - r{2}(1,i));
     dummy = 0;
     for j = 1 : 2
       dummy = dummy + (I(i,j) + epsilon(i,j))*(r{1}(n,j) - r{1}(1,j));
     end
-    dummy = dummy - dummy1;
-    D_sq = D_sq + dummy1^2;
+    dummyn = dummyn + (r{2}(n,i) - r{2}(1,i) - dummy)^2 ;
   end
+  D_sq = D_sq + dummyn;
 end
